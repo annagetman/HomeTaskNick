@@ -1,0 +1,17 @@
+body {
+   
+}
+
+h1 {
+   text-align: center;
+}
+.div-task1 {
+
+}
+
+.rand-login {
+    font: 20pt MonoSpace;
+    display: inline-block;
+    padding: 15px;
+    border: 1px solid black;
+}
