@@ -110,5 +110,6 @@ const arrTextFun = () => {
     const arrText = document.querySelector('.rand-arr');
     arrText.innerText = arr;
 }
+
 document.querySelector('.but-rand-arr').addEventListener('click', arrTextFun)
 //document.querySelector('.but-rand-arr').removeEventListener('click', arrTextFun);
