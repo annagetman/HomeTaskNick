@@ -18,49 +18,24 @@
 
 //It can happen that in two distinct families with the same family name two people have the same first name too.
 
-const s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
+const s = "Fred:Corwill;Wilfred:Corwill;Barney:Aornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Worwill";
 
+const newS = s.toLocaleUpperCase();
 let re = /\s*;\s*/;
-let newSplitArr = s.split(re);
+let dd = /\s*:\s*/;
 
+let newSplitArr = newS.split(re);
+console.log(newSplitArr.sort())
 
-let SplitSortArr = newSplitArr.sort() 
+let newStr= [];
 
-for (let i = 0; i < SplitSortArr.length; i++) {
-    const str = SplitSortArr[i].toUpperCase();
-    let name = str.replace(':', ', ')
-    console.log('(' + name + ')');
+for (i = 0; i < newSplitArr.length; i++) {
+    newStr += `(${(newSplitArr[i].split(dd).reverse())})` 
 }
-
-//console.log('----')
-
-//const guestsMap = [
-//    { name: 'Fred', surname: 'Corwill' },
-//    { name: 'Wilfred', surname: 'Corwill' },
-//    { name: 'Barney', surname: 'Aornbull' },
-//    { name: 'Betty', surname: 'Tornbull' },
-//    { name: 'Bjon', surname: 'Wornbull' },
-//    { name: 'Raphael', surname: 'Corwill' },
-//    { name: 'Alfred', surname: 'Corwill' },
-//]
+console.log(newStr)
 
 
-//guestsMap.sort(function (a, b) {
-//    if (a.name > b.name || a.surname > b.surname) {
-//        return 1;
-//    }
-//    if (a.name < b.name || a.surname < b.surname) {
-//        return -1;
-//    }
-//    return 0;
-//});
 
-
-//guestsMap.map(function (a, b) {
-//    console.log(`(${a.name.toUpperCase()} ${a.surname.toUpperCase()})`)
-//})
-
-//console.log(guestsMap.join())
 
 
 
