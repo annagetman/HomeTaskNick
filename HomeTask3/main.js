@@ -20,24 +20,22 @@
 
 const s = "Fred:Corwill;Wilfred:Corwill;Barney:Aornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Worwill";
 
-const newS = s.toLocaleUpperCase();
-let re = /\s*;\s*/;
-let dd = /\s*:\s*/;
+const getNewList = (str) => {
 
-let newSplitArr = newS.split(re);
-console.log(newSplitArr.sort())
+    const upperStr = str.toLocaleUpperCase();
+    const re = /\s*;\s*/;
+    const dd = /\s*:\s*/;
+    const splitArr = upperStr.split(re);
+    const sortArr = splitArr.sort();
+    let newStr = [];
 
-let newStr= [];
-
-for (i = 0; i < newSplitArr.length; i++) {
-    newStr += `(${(newSplitArr[i].split(dd).reverse())})` 
+    for (i = 0; i < splitArr.length; i++) {
+        newStr += `(${(splitArr[i].split(dd).reverse())})` 
+    }
+    console.log(newStr)
 }
-console.log(newStr)
 
-
-
-
-
+getNewList(s)
 
 //Task 2:
 //Find a Chair
@@ -55,3 +53,32 @@ console.log(newStr)
 //meeting([['XXX', 3], ['XXXXX', 6], ['XXXXXX', 9]], 4)-- -> [0, 1, 3]
 //meeting([['XXX', 1], ['XXXXXX', 6], ['X', 2], ['XXXXXX', 8], ['X', 3], ['XXX', 1]], 5)-- -> [0, 0, 1, 2, 2]
 //meeting([['XX', 2], ['XXXX', 6], ['XXXXX', 4]], 0)-- -> 'Game On'
+
+
+
+
+
+
+//Task 3:
+//Given a number of points on a plane, your task is to find two points with the smallest distance between them.
+//Each points will be represented as an array with 2 coordinates.
+//For the plane above, the input will be:
+//The two points that are closest to each other are D and F.Expected answer should be an array with both points in any order. [[6, 3], [7, 4]] or[[7, 4], [6, 3]] are valid answers
+//for the example above.
+
+const mapPoints = [
+    [2, 2], // A
+    [2, 8], // B
+    [5, 5], // C
+    [6, 3], // D
+    [6, 7], // E
+    [7, 4], // F
+    [7, 9]  // G
+]
+
+const getPoint = () => {
+    for (i = 0; i < mapPoints.length; i++) {
+        console.log(mapPoints[i])
+        console.log('pppp')
+    }
+}
