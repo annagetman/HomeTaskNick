@@ -55,33 +55,37 @@ const getNewList = (str) => {
 //meeting([['XX', 2], ['XXXX', 6], ['XXXXX', 4]], 0)-- -> 'Game On'
 
 const room1 = ['XXX', 3];
-const room2 = ['XXXXX', 6];
+const room2 = ['XXXXX', 7];
 const room3 = ['XXXXXX', 9];
-const room4 = ['XX', 2];
+const room4 = ['XXX', 4];
+
 const freeChairCountInTheRoom = 0;
 
-const needChair = 4;
 
 const arrRooms = [room1, room2, room3, room4];
 
 const res = [];
-const freeChairSumm = 0;
+let freeChairSumm = 0;
 
-const findChair = () => {
-    arrRooms.forEach((entry) => {
+const findChair = (findChair, needChair) => {
+    //if (needChair === 0) {
+    //    console.log('Game on');
+    //}
+    findChair.forEach((entry) => {
         const agentCount = entry[0].length;
         const allChair = entry[1];
         const freeChairInCurrentRoom = allChair - agentCount;
+        freeChairSumm += freeChairInCurrentRoom;
 
-        if (freeChairInCurrentRoom < needChair) {
-    
+        if (freeChairSumm > needChair) {
             res.push(freeChairInCurrentRoom)
-            console.log(res)         
         }
+        return res
     })
 }
 
-findChair()
+findChair(arrRooms, 5)
+console.log(res)
 
 
 //Task 3:
