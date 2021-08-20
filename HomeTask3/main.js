@@ -30,12 +30,12 @@ const getNewList = (str) => {
     let newStr = [];
 
     for (i = 0; i < splitArr.length; i++) {
-        newStr += `(${(splitArr[i].split(dd).reverse())})` 
+        newStr += `(${(splitArr[i].split(dd).reverse())})`
     }
     console.log(newStr)
 }
 
-getNewList(s)
+//getNewList(s)
 
 //Task 2:
 //Find a Chair
@@ -54,9 +54,34 @@ getNewList(s)
 //meeting([['XXX', 1], ['XXXXXX', 6], ['X', 2], ['XXXXXX', 8], ['X', 3], ['XXX', 1]], 5)-- -> [0, 0, 1, 2, 2]
 //meeting([['XX', 2], ['XXXX', 6], ['XXXXX', 4]], 0)-- -> 'Game On'
 
+const room1 = ['XXX', 3];
+const room2 = ['XXXXX', 6];
+const room3 = ['XXXXXX', 9];
+const room4 = ['XX', 2];
+const freeChairCountInTheRoom = 0;
 
+const needChair = 4;
 
+const arrRooms = [room1, room2, room3, room4];
 
+const res = [];
+const freeChairSumm = 0;
+
+const findChair = () => {
+    arrRooms.forEach((entry) => {
+        const agentCount = entry[0].length;
+        const allChair = entry[1];
+        const freeChairInCurrentRoom = allChair - agentCount;
+
+        if (freeChairInCurrentRoom < needChair) {
+    
+            res.push(freeChairInCurrentRoom)
+            console.log(res)         
+        }
+    })
+}
+
+findChair()
 
 
 //Task 3:
@@ -77,8 +102,5 @@ const mapPoints = [
 ]
 
 const getPoint = () => {
-    for (i = 0; i < mapPoints.length; i++) {
-        console.log(mapPoints[i])
-        console.log('pppp')
-    }
+
 }
